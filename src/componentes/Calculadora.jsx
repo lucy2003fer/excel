@@ -10,7 +10,7 @@ const Calculadora = () => {
     const [fechaFin, setFechaFin] = useState("")
     const [registros, setRegistros] = useState([])
 
-    // Funciones de cálculo
+
     const calcularHoras = () => (minutos / 60).toFixed(2)
     const calcularJornales = () => (calcularHoras() / 8.5).toFixed(2)
     const calcularEgresosManoObra = () => (calcularJornales() * precioJornal).toFixed(2)
@@ -20,13 +20,13 @@ const Calculadora = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        // Validación de fechas y datos
+
         if (!fechaInicio || !fechaFin) {
             alert("Por favor, selecciona un rango de fechas.")
             return;
         }
 
-        // Guardar el registro
+
         const nuevoRegistro = {
             fechaInicio,
             fechaFin,
@@ -41,7 +41,7 @@ const Calculadora = () => {
         }
         setRegistros([...registros, nuevoRegistro])
 
-        // Limpiar campos después de guardar
+
         setMinutos("")
         setEgresosInsumos("")
         setTotalIngresos("")

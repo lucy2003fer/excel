@@ -21,7 +21,7 @@ const CampoSelect = () => {
     const recibirDato = (e) => {
         e.preventDefault()
 
-        // Validación
+
         if (!actividad || !fecha || tiempo <= 0) {
             alert("Por favor, completa todos los campos correctamente.")
             return

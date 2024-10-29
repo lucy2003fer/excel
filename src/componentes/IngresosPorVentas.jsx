@@ -8,7 +8,7 @@ const IngresosPorVentas = () => {
     const [registros, setRegistros] = useState([])
     const [total, setTotal] = useState(0)
 
-    // Opciones de productos
+
     const productosOptions = {
         1: "Lechuga",
         2: "Acelga",
@@ -20,7 +20,7 @@ const IngresosPorVentas = () => {
         8: "Cilantro"
     }
 
-    // Opciones de unidades
+
     const unidadesOptions = [
         { value: "unidades", label: "Unidades" },
         { value: "canastillas", label: "Canastillas" },
@@ -32,17 +32,17 @@ const IngresosPorVentas = () => {
     const recibirDato = (e) => {
         e.preventDefault()
 
-        // Validación de campos
+
         if (!producto || !cantidad || !unidad || ingreso <= 0) {
             alert("Por favor, completa todos los campos correctamente.")
             return
         }
 
-        const nuevoIngreso = parseInt(ingreso) || 0 // Convertir ingreso a número
-        const nuevoTotal = total + nuevoIngreso // Actualizar total
+        const nuevoIngreso = parseInt(ingreso) || 0 
+        const nuevoTotal = total + nuevoIngreso 
         setTotal(nuevoTotal)
 
-        // Agregar el registro
+      
         const nuevoRegistro = {
             producto: productosOptions[producto],
             cantidad: cantidad,
@@ -51,7 +51,7 @@ const IngresosPorVentas = () => {
         };
         setRegistros([...registros, nuevoRegistro]); // Actualizar registros
 
-        // Limpiar campos
+
         setIngreso("")
         setProducto("")
         setCantidad("")
